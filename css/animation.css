@@ -1,0 +1,89 @@
+.animation-wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color:rgb(21, 18, 41);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    --duration: 2.4s;
+    --gap-delay: calc(var(--duration) / 6);
+    --timing-function:  ease-in-out;
+}
+.animation-box{
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.animation-box-2{
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.dot{
+    width: 20px;
+    height: 20px;
+    background-color:#333;
+    border-radius: 50%;
+    
+}
+.animation-box .dot{
+    animation: roll var(--duration) var(--timing-function) infinite;
+}
+@keyframes roll {
+    0%{
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50%{
+        transform: translateY(40px) scale(0.85);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(0) scale(0.6);
+        opacity: 0;
+    }
+}
+.animation-box-2 .dot{
+    animation: roll-after var(--duration) var(--timing-function) infinite;
+}
+@keyframes roll-after {
+    0%{
+        transform: translateY(0) scale(0.6);
+        opacity: 0;        
+    }
+    50%{
+        transform: translateY(-40px) scale(0.85);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+.dot.n2{
+    animation-delay: calc(var(--gap-delay) * 1);
+}
+.dot.n3{
+    animation-delay: calc(var(--gap-delay) * 2);
+}
+.dot.n4{
+    animation-delay: calc(var(--gap-delay) * 3);
+}
+.dot.n5{
+    animation-delay: calc(var(--gap-delay) * 4);
+}
+.dot.n6{
+    animation-delay: calc(var(--gap-delay) * 5);
+}
+
+
