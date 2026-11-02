@@ -143,3 +143,6 @@ h1, h2{
 .admin-table tr:hover{
     opacity: 0.7;
 }
+.admin-table tbody tr:nth-of-type(even){
+    background-color: #dadada48;
+}
